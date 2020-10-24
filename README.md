@@ -1,2 +1,2 @@
-# petui-flutter
-Petui - developed with flutter
+# petUI-flutter
+Pet UI - developed with flutter
