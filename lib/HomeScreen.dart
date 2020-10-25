@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pet_ui/configuration.dart';
 import 'package:pet_ui/screen2.dart';
+import 'package:pet_ui/screen3.dart';
+
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -230,88 +232,94 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 10),
-            height: 200,
-            child: Row(
-              children: [
-                Expanded(
-                    child: Stack(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 40),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Screen3()));
+            },
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              height: 200,
+              child: Row(
+                children: [
+                  Expanded(
+                      child: Stack(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 40),
+                        decoration: BoxDecoration(
+                          color: Colors.orange.shade100,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: shadowList,
+                        ),
+                      ),
+                      Align(
+                        child: Hero(tag: 2,child: Image.asset('images/pet-cat2.png')),
+                      )
+                    ],
+                  )),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 60, bottom: 20),
                       decoration: BoxDecoration(
-                        color: Colors.orange.shade100,
-                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
                         boxShadow: shadowList,
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                            bottomRight: Radius.circular(20)),
                       ),
-                    ),
-                    Align(
-                      child: Image.asset('images/pet-cat2.png'),
-                    )
-                  ],
-                )),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.only(top: 60, bottom: 20),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: shadowList,
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(20),
-                          bottomRight: Radius.circular(20)),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(15, 15, 10, 15),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Chhola',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(15, 15, 10, 15),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Chhola',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
                                 ),
+                                Icon(Icons.search_off),
+                              ],
+                            ),
+                            Text(
+                              "Abyssian Cat",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w600,
                               ),
-                              Icon(Icons.search_off),
-                            ],
-                          ),
-                          Text(
-                            "Abyssian Cat",
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
                             ),
-                          ),
-                          Text('7Yrs old',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 12
+                            Text('7Yrs old',
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 12
+                              ),
                             ),
-                          ),
-                          Row(
-                            children: [
-                              Icon(Icons.location_on, color: primaryGreen,),
-                              Text(
-                                "Distance: 130 Km",
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
+                            Row(
+                              children: [
+                                Icon(Icons.location_on, color: primaryGreen,),
+                                Text(
+                                  "Distance: 130 Km",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
 
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           SizedBox(
